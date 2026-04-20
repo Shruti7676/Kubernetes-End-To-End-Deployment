@@ -1,10 +1,39 @@
-# Kubernetes-End-To-End-Deployment
-Deployed a Game in the AWS EKS Cluster and Exposed to the outside world.
+# Kubernetes-End-To-End-Deployment on AWS EKS
 
-Hey Folks! Here is the steps to do the project:
+## Project Overview
+This project demonstrates the deployment of a containerized application on AWS EKS (Elastic Kubernetes Service) and exposing it to external users using Kubernetes networking components.
 
-1. Make sure you have all the pre-requisites which is mentioned in the pre-requisites file for doing this Project.
-2. Creat a EKS Cluster by following the EKS Creation file.
-3. Create a FARGATE profile and deploy the GAME as pods by following the two commands mentioned in 2048 Game as Pods file.
-4. Follow the commands in OIDC_and_ALB file for creating OIDC connetion and installing ALB controller.
-5. Finally, you can verify it to get the external IP and access the application from any browser.
+## Technologies Used
+- AWS EKS
+- Kubernetes
+- Docker
+- YAML
+- AWS Fargate
+- AWS ALB Ingress Controller
+
+## Architecture
+- Containerized application using Docker
+- AWS EKS for Kubernetes cluster management
+- AWS Fargate for serverless pod execution
+- Kubernetes Deployment for application management
+- Kubernetes Service (LoadBalancer) for external exposure
+- AWS Load Balancer for routing external traffic
+
+## Implementation Steps
+1. Created an Amazon EKS cluster
+2. Configured kubectl access to the cluster
+3. Created and configured AWS Fargate profile for running Kubernetes pods
+4. Deployed the application using Kubernetes deployment.yaml
+5. Exposed the application using service.yaml (LoadBalancer type)
+6. Configured IAM OIDC provider for secure authentication
+7. Installed and configured AWS ALB Ingress Controller
+8. Verified application accessibility via external endpoint
+
+## Project Files
+- deployment.yaml → Defines application deployment and replicas
+- service.yaml → Exposes application using LoadBalancer
+- Dockerfile → Containerizes the application
+- deploy.sh → Automates Kubernetes deployment process
+
+## Outcome
+Successfully deployed a containerized application on AWS EKS using AWS Fargate and exposed it externally using Kubernetes LoadBalancer service.
